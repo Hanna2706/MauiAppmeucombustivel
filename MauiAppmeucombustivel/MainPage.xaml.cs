@@ -11,6 +11,9 @@
         {
             try
             {
+                string marca = txt_marca.Text;
+                string modelo = txt_modelo.Text;
+
                 double etanol = Convert.ToDouble(txt_etanol.Text);
                 double gasolina = Convert.ToDouble(txt_gasolina.Text);
 
@@ -18,11 +21,11 @@
 
                 if (etanol <= (gasolina * 0.7))
                 {
-                    msg = "O etanol está compensando";
+                    msg = $"O etanol está compensando para seu {marca} {modelo}.";
                 }
                 else
                 {
-                    msg = "A gasolina está compensando";
+                    msg = $"A gasolina está compensando para seu {marca} {modelo}.";
                 }
 
                 DisplayAlert("Calculado", msg, "OK");
